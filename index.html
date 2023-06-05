@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login page</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="brand-logo"></div>
+        <div class="brand-title">CRM</div>
+        <div class="inputs">
+          <label>EMAIL</label>
+          <input type="email" placeholder="example@test.com" id="email">
+          <label>PASSWORD</label>
+          <input type="text" placeholder="Min 6 charaters long" id="password">
+          <label><strong>forgetpassword</strong></label>
+          <button type="submit" onclick="login()">LOGIN</button>
+          <label> <p>Don't have an account? <a href="Reg.html" >Signup</a></p></label>
+        </div>
+    </div>
+
+
+        <script>
+          function login() 
+          {
+              var email=document.getElementById("email").value;
+              var password=document.getElementById("password").value;
+  
+              var email1=localStorage.getItem("email1");
+              var password1=localStorage.getItem("password1");
+  
+              if(email==email1 && password==password1){
+                  window.location.href="dash.html";
+  
+              }
+              else {
+                  alert("Email or Password is Incorrect")
+              }
+  
+          }
+         
+      </script>
+       
+
+    
+</body>
+</html>

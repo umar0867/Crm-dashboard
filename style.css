@@ -1,0 +1,87 @@
+@import
+url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;900&display=swap');
+
+input {
+  caret-color:black;
+}
+
+body {
+  
+  margin-left :36%;
+  width: 100vw;
+  height: 100vh;
+  background-image:url(umar222.jpg);
+  background-repeat: no-repeat;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  place-items: center;
+  overflow: hidden;
+  font-family: poppins;
+}
+
+.container {
+  position: relative;
+  width: 420px;
+  height: 610px;
+  border-radius: 10px;
+  padding: 40px;
+  box-sizing: border-box;
+  background: white;
+  /* box-shadow: 10px 10px 20px green, -10px -10px 20px blue; */
+}
+
+.brand-title {
+  margin-top: 10px;
+  font-weight: 900;
+  font-size: 1.8rem;
+  color:darkgreen;
+  letter-spacing: 1px;
+}
+
+.inputs {
+  text-align: left;
+  margin-top: 30px;
+}
+
+label, input, button {
+  display:block;
+  width: 100%;
+  padding: 0;
+  border:0s;
+  border-color: darkgreen;
+  outline: none;
+  box-sizing: border-box;
+}
+
+label {
+  margin-bottom: 4px;
+}
+
+input::placeholder {
+  color:gray;
+}
+
+input {
+  background:white;
+  padding: 10px;
+  padding-left: 20px;
+  height: 50px;
+  font-size: 14px;
+  border-radius: 50px;
+  border-color: darkgreen;
+}
+
+button {
+  color:white;
+  margin-top: 20px;
+  background:rgba(137, 43, 226, 0.721);
+  height: 40px;
+  width: 90px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-weight: 900;
+  transition: 0.5s;
+  margin-left: 33%;
+}

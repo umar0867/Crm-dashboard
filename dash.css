@@ -1,0 +1,78 @@
+@import
+url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;900&display=swap');
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+nav{
+  width: 200px;
+  height: 800px;
+  background:darkgreen;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 80px;
+position: relative;
+}
+header{
+    position: absolute;
+    text-align: center;
+    justify-content: left;
+    top: 1%;
+    float: left;
+    font-size:30px ;
+   
+}
+
+header h1{
+  color: white;
+  margin-left: -70%;
+}
+.container{
+  position: absolute;
+    display: flex;
+    flex-direction:column;
+    justify-content: space-between;
+    width: 200px;
+    height: 500px;
+    top: 115px;
+    padding: 30px;
+    text-align: center;
+    font-size: 25px;
+
+}
+    .container a {
+        color: white;
+        text-decoration: none;
+        margin-left: -180px;
+      }
+      .container a:hover {
+        color:darkblue;
+      }
+      section{
+        margin: 0px;
+        margin-top: 25px;
+        margin-left: 25px;
+        margin-right: 25px;
+        margin-bottom: 25px;
+        padding: 20px;
+        text-align: center;
+        font-size: 15px;
+        background-color: no;
+        color: white;
+        width:550px;
+        height: 250px;
+        /* border: 2px solid darkblue;        */
+        float:right;
+        border-radius: 10%;
+      }
+      body{
+        background-image: url(umar2.jpg);
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-attachment: fixed;
+        
+      }
