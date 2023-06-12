@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+    <script async src="https://cse.google.com/cse.js?cx=150e7fb2a56bf4483"></script>
+<head>
+
+</head>
+<body>
+    
+    <div class="gcse-search">
+        <input type="text"  id="country-input"  placeholder="search for Everything">
+    </div>
+    
+
+<button onclick="changeColor(this)" >Red</button>
+<button onclick="changeColor(this)" >Green</button>
+<button onclick="changeColor(this)" >Blue</button>
+
+    <h1><p id="loc" style="font-weight: bold;"> </p></h1>
+<button onclick="myFunction()" >get IP address</button>
+
+<p>LOCATION</p>
+
+<button onclick="getLocation()">Click here</button>
+
+<p id="loc"></p>
+<script>
+
+
+var y = document.getElementById("loc");
+
+function getLocation() {
+  if (navigator.geolocation) 
+  {
+    navigator.geolocation.getCurrentPosition(showPosition);
+  } 
+  else { 
+    y.innerHTML = "Geolocation is not supported by this browser.";
+  }
+}
+
+function showPosition(position) {
+  y.innerHTML = "Latitude: " + position.coords.latitude + 
+  "<br>Longitude: " + position.coords.longitude;
+}
+ function changeColor (element){
+    document.body.style.backgroundColor = element.innerText
+    }
+    console.log(document.body.style.backgroundColor) 
+function myFunction (){
+    document.getElementById("loc").innerHTML='Your IP address is: 172.16.4.229';
+} 
+</script>
+
+
+</body>
+</html>
