@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Bio Data</title>
+  <style>
+    .hidden {
+      display: none;
+    }
+
+    #myForm {
+      text-align: center;
+      margin-top: 10%;
+    }
+  </style>
+</head>
+<body>
+  <div class="main">
+    <form id="myForm">
+      <h1>Information Form</h1>
+      <strong><label for="fullName">Full Name:</label></strong>
+      <input type="text" id="fullName" required>
+      <br><br>
+
+      <strong><label for="userName">User Name:</label></strong>
+      <input type="text" class="userName" name="username" onkeyup="if (/[^|a-z0-9]+/g.test(this.value)) this.value = this.value.replace(/[^|a-z0-9]+/g,'')" required>
+      <br><br>
+
+      <strong><label for="email">Email:</label></strong>
+      <input type="email" id="email" required>
+      <br><br>
+
+      <strong><label for="phoneNumber">Phone Number:</label></strong>
+      <input type="tel" id="phoneNumber" name="phone" required>
+      <br><br>
+
+      <strong><label for="password">Password:</label></strong>
+      <input type="password" id="password" minlength="8" required>
+      <br><br>
+
+      <strong><label for="education">Education:</label></strong>
+      <select id="education" onchange="showDegreeField(this.value)">
+        <option value="">Select</option>
+        <option value="bachelors">Bachelors</option>
+        <option value="Masters">Masters</option>
+        <!-- Add other education options here -->
+      </select>
+      <br><br>
+
+      <div id="degreeField" class="hidden">
+        <label for="degree">Degree:</label>
+        <select id="degree">
+          <option value="">Select</option>
+          <option value="4-year">4-year degree</option>
+          <option value="2-year">2-year degree</option>
+        </select>
+        <br><br>
+      </div>
+
+      <div id="duration" class="hidden">
+        <label for="duration">Duration:</label>
+        <select id="duration">
+          <option value="">Select</option>
+          <option value="1-year">1-year</option>
+          <option value="2-year">2-year</option>
+        </select>
+        <br><br>
+      </div>
+
+      <button type="submit">Submit</button>
+    </form>
+  </div>
+
+  <script>
+    function showDegreeField(education) {
+      const degreeField = document.getElementById("degreeField");
+      if (education === "bachelors") {
+        degreeField.classList.remove("hidden");
+      } else {
+        degreeField.classList.add("hidden");
+      }
+    }
+
+    document.getElementById("myForm").addEventListener("submit", function(event) {
+      event.preventDefault(); 
+
+    
+      const fullName = document.getElementById("fullName").value;
+      const userName = document.querySelector(".userName").value;
+      const email = document.getElementById("email").value;
+      const phoneNumber = document.getElementById("phoneNumber").value;
+      const password = document.getElementById("password").value;
+      const education = document.getElementById("education").value;
+      const degree = document.getElementById("degree").value;
+      const duration = document.getElementById("duration").value;
+
+      const formData = {
+        fullName: fullName,
+        userName: userName,
+        email: email,
+        phoneNumber: phoneNumber,
+        password: password,
+        education: education,
+        degree: degree,
+        duration: duration
+      };
+
+   
+      const jsonData = JSON.stringify(formData, null, 2);
+
+      
+      const blob = new Blob([jsonData], { type: "application/json" });
+
+
+      const a = document.createElement("a");
+      a.href = URL.createObjectURL(blob);
+      a.download = "form_data.json";
+      a.click();
+    });
+  </script>
+</body>
+</html>
